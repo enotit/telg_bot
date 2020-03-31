@@ -25,7 +25,10 @@ class BD:
         return self.quests.get(id)
 
     def delete(self, id):
-        self.quests.pop(id)
+        try:
+            self.quests.pop(id)
+        except KeyError:
+            pass
 
     def add(self, id, que):
         self.quests[id] = que
